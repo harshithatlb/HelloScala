@@ -6,19 +6,25 @@ import org.springframework.boot;
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.ResponseBody; 
 import org.springframework.stereotype.Controller; 
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
 /**
  * This config class will trigger Spring @annotation scanning and auto configure Spring context.
  *
  * @author harshitha
  * @since 1.0
  */
+ 
 @Controller
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 class HelloConfig {
 
-  @RequestMapping(Array("/"))
-  @ResponseBody
-  def home(): String="Hello world!"
+@RequestMapping(value=Array("/"),method=Array(RequestMethod.GET))
+//@RequestMapping(Array("/"))
+@ResponseBody
+def home(): String = "Hello World Harshitha!"
+
 }
